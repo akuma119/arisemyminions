@@ -1,0 +1,101 @@
+<html>
+    <head>
+        <meta name="viewport" 
+        content="width=device-width, initial-scale=1.0, viewport-fit=cover"> 
+        <title>ARISE - Edificios</title>
+    </head>
+    <body>
+        <h1>Edificios</h1>
+        <div id="datadiv"></div>
+        <style>
+            h1 {
+                color:seashell
+            }
+            body {
+                background-color: rgb(64, 43, 8);
+                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            }
+            img {
+                width: 350px;
+                height: 200px;
+            }
+            .edificio {
+                background-color: beige;
+                padding: 10px;
+                border-radius: 10px;
+                margin-bottom: 10px;
+            }
+        </style>
+    </body>
+    <script>
+        let datos = [
+            {
+                name: "Centro Urbano",
+                desc: "Sirve para tomar decisiones y discutir sobre el futuro de la aldea",
+                cost: {wood: 20, stone: 20},
+                image: "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/0359cc29-b9b3-4c5a-af2b-93e13a0b1056/d3h765e-c3b5b385-0e6d-42e8-971a-78a28e1d0a1b.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3sicGF0aCI6IlwvZlwvMDM1OWNjMjktYjliMy00YzVhLWFmMmItOTNlMTNhMGIxMDU2XC9kM2g3NjVlLWMzYjViMzg1LTBlNmQtNDJlOC05NzFhLTc4YTI4ZTFkMGExYi5qcGcifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6ZmlsZS5kb3dubG9hZCJdfQ.xrHNFdgbXXuRSrGJltOA7AkL-6ipZ72ZAhPiw2buGd4"
+            },
+            {
+                name: "Chozas",
+                desc: "Gente puede vivir allí",
+                cost: {wood: 10},
+                image: "https://3.bp.blogspot.com/-CcpZHjNKwwc/WuJlAJr3xgI/AAAAAAAAE4c/LvrWoBnoMPIN-M5tJ4P8rnWSetuC97XaQCLcBGAs/s1600/24359639330_e034a1883b_z.jpg"
+            },
+            {
+                name: "Templo",
+                desc: "Permite fundar una religión",
+                cost: {wood: 50, gold: 500, souls: 10},
+                image: "https://lh3.googleusercontent.com/proxy/7ysA_EFe9ez1IahpivQULLOM_EPTSF9uSboouIc905dVu3kQ9HlzhjvkeCnEktfEw_9OLGZ3r7cUY9IlryUiyAsH72tbuB-uTcxLks4ogjEzaSHcOQ"
+            },
+            {
+                name: "Granero",
+                desc: "Permite que cultuvemos cosas",
+                cost: {wood: 20},
+                image: "https://i.pinimg.com/originals/ee/94/38/ee94389762a7282ded4f3ab94527564a.jpg"
+            },
+            {
+                name: "Corral",
+                desc: "Nos permite criar animales",
+                cost: {wood: 20},
+                image: "https://i.pinimg.com/originals/2f/1e/a2/2f1ea29ba3883d9796d358bd24c19bc4.jpg"
+            },
+            {
+                name: "Aserradero",
+                desc: "Permite trabajar con madera y producir más",
+                cost: {wood: 20, stone: 10},
+                image: "https://i0.wp.com/lastsword.com/wp-content/uploads/2013/08/Portada-Aserradero-Sawmill-Scenery-Escenograf%C3%ADa-Warhammer-Mordheim-02.jpg?w=1160"
+            },
+            {
+                name: "Empalizada",
+                desc: "Para que no pasen dentro de la ciudad",
+                cost: {wood: 100},
+                image: "https://www.darkstargames.co.uk/user/products/large/battle-systems-palisade-walls.jpg"
+            },
+            {
+                name: "Torre de vigilancia",
+                desc: "Permite vigilar desde lo alto",
+                cost: {wood: 50, stone: 10},
+                image: "https://i.pinimg.com/originals/11/1c/a2/111ca284aeaeaa0e474e5964949716e6.jpg"
+            },
+            {
+                name: "Refugio",
+                desc: "Los ciudadanos pueden ocultarse ahi para protegerse de ataques",
+                cost: {wood: 30, stone: 30},
+                image: "https://i.pinimg.com/564x/55/58/d8/5558d8be570cd20b5bc5883e30414c26.jpg"
+            }
+        ]
+
+        let datadiv = document.getElementById("datadiv")
+        for (let i=0; i< datos.length; i++) {
+            datadiv.innerHTML += "<div class='edificio'>"
+            + "<h2>"+ datos[i].name + "</h2>"
+            + "🌲 " + (datos[i].cost.wood ?  datos[i].cost.wood : "0") + " | "
+            + "⛰️ " + (datos[i].cost.stone? datos[i].cost.stone: "0") + " | "
+            + "💰 " + (datos[i].cost.gold ? + datos[i].cost.gold : "0") + " | "
+            + "👻 " + (datos[i].cost.souls? + datos[i].cost.souls: "0") + " <br>"
+            + "<br>" + datos[i].desc
+            + "<br><img src='" + datos[i].image + "'><br>"
+            +"</div>"
+        }
+    </script>
+</html>
